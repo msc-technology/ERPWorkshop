@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckDigitCalculatorTests",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateContainersBatch", "..\CreateContainersBatch\CreateContainersBatch.csproj", "{195C9E7F-3D18-4C1F-857A-ED23A9DEDBA1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomProducerTest", "..\RandomProducerTest\RandomProducerTest.csproj", "{7C49C065-B76D-48DE-83B1-E9102C226020}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{195C9E7F-3D18-4C1F-857A-ED23A9DEDBA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{195C9E7F-3D18-4C1F-857A-ED23A9DEDBA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{195C9E7F-3D18-4C1F-857A-ED23A9DEDBA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C49C065-B76D-48DE-83B1-E9102C226020}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C49C065-B76D-48DE-83B1-E9102C226020}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C49C065-B76D-48DE-83B1-E9102C226020}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C49C065-B76D-48DE-83B1-E9102C226020}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
