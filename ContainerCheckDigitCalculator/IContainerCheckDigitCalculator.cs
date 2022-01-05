@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ContainerCheckDigitCalculator
 {
-    public class Class1
+    public interface IContainerCheckDigitCalculator
     {
+        int CalculateChackDigit(string partialContainerCode);
     }
 }
