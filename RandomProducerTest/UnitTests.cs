@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using CreateContainersBatch;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -20,6 +21,7 @@ namespace RandomProducerTest
 
         public class MockPersister : IContainerPersisterService
         {
+            List<int> hashcodes;
             public MockPersister(int expectedPersistCount)
             {
                 this.expectedPersistCount = expectedPersistCount;
@@ -43,8 +45,10 @@ namespace RandomProducerTest
 
             public void Persist(string containerCode, string containerType, DateTime hireDate)
             {
+
                 if (!Regex.IsMatch(containerCode, @"^MS[A-Z]U\d{7}$"))
                     followRules = false;
+                hashcodes.Add(containerCode.GetHashCode() ^ containerType.GetHashCode() ^ hireDate.GetHashCode());
                 expectedPersistCount--;
                 var span = DateTime.Today - hireDate.Date;
                 if (span.TotalDays > 120 || span.TotalDays < 0)
@@ -73,7 +77,21 @@ namespace RandomProducerTest
                 if (expectedPersistCount > 0)
                     throw new Exception("persist not called enough");
                 if( expectedPersistCount < 0)
-                    throw new Exception("persist not called too many times");
+                    throw new Exception("persist called too many times");
+                var avg = 0;
+                foreach (var k in hashcodes)
+                {
+                    avg += k;
+                }
+                avg /= hashcodes.Count;
+                double stddev=0;
+                foreach (var k in hashcodes)
+                {
+                    stddev += Math.Pow(k-avg,2);
+                }
+                stddev = Math.Sqrt(stddev / hashcodes.Count);
+                if(stddev<2000000)
+                    throw new Exception("data does not seems to be random");
 
             }
         }

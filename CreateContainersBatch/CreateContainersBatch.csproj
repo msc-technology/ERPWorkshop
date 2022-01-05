@@ -52,5 +52,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ContainerCheckDigitCalculator\ContainerCheckDigitCalculator.csproj">
+      <Project>{659cb985-bd02-4bed-b286-ef1a1d91505d}</Project>
+      <Name>ContainerCheckDigitCalculator</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
