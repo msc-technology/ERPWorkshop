@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateContainersBatch", "..
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomProducerTest", "..\RandomProducerTest\RandomProducerTest.csproj", "{7C49C065-B76D-48DE-83B1-E9102C226020}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContainerSearch", "..\ContainerSearch\ContainerSearch.csproj", "{A5732B23-076F-405C-A13E-109A5ED3D0DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{7C49C065-B76D-48DE-83B1-E9102C226020}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C49C065-B76D-48DE-83B1-E9102C226020}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C49C065-B76D-48DE-83B1-E9102C226020}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5732B23-076F-405C-A13E-109A5ED3D0DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5732B23-076F-405C-A13E-109A5ED3D0DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5732B23-076F-405C-A13E-109A5ED3D0DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5732B23-076F-405C-A13E-109A5ED3D0DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
