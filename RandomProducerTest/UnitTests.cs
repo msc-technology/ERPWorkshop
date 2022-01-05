@@ -21,7 +21,7 @@ namespace RandomProducerTest
 
         public class MockPersister : IContainerPersisterService
         {
-            List<int> hashcodes;
+            List<int> hashcodes=new List<int>();
             public MockPersister(int expectedPersistCount)
             {
                 this.expectedPersistCount = expectedPersistCount;
@@ -59,6 +59,7 @@ namespace RandomProducerTest
                     case "40 DRY VAN":
                     case "20 HIGH CUBE":
                     case "40 HIGH CUBE":
+                        break;
                     default:followRules = false;
                         break;
                 }
@@ -78,18 +79,18 @@ namespace RandomProducerTest
                     throw new Exception("persist not called enough");
                 if( expectedPersistCount < 0)
                     throw new Exception("persist called too many times");
-                var avg = 0;
+                double avg = 0;
                 foreach (var k in hashcodes)
                 {
-                    avg += k;
+                    avg += (uint)k;
                 }
                 avg /= hashcodes.Count;
                 double stddev=0;
                 foreach (var k in hashcodes)
                 {
-                    stddev += Math.Pow(k-avg,2);
+                    stddev += Math.Abs((uint)k - avg);
                 }
-                stddev = Math.Sqrt(stddev / hashcodes.Count);
+                stddev = stddev / hashcodes.Count;
                 if(stddev<2000000)
                     throw new Exception("data does not seems to be random");
 
