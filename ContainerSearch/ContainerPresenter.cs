@@ -23,7 +23,8 @@ namespace ContainerSearch
 
             if (!pages.ContainsKey(page))
                 pages[page]=FetchPage(index);
-            
+            var cp = pages[page];
+            return cp[index % pageSize];
         }
 
         private ContainerModel[] FetchPage(int index)

@@ -20,7 +20,11 @@ namespace ContainerSearch
 
         private void ListView1_RetrieveVirtualItem(object sender, RetrieveVirtualItemEventArgs e)
         {
-            Presenter.GetItemAt(e.ItemIndex);
+            var m = Presenter.GetItemAt(e.ItemIndex);
+            e.Item = new ListViewItem();
+            e.Item.SubItems.Add(m.Code);
+            e.Item.SubItems.Add(m.Type);
+            e.Item.SubItems.Add(m.HireDate.ToShortDateString());
 
         }
 
