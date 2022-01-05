@@ -8,7 +8,7 @@ namespace ContainerCheckDigitCalculator
 {
     public class CheckDigitCalculator : IContainerCheckDigitCalculator
     {
-        public int CalculateChackDigit(string partialContainerCode)
+        public int CalculateCheckDigit(string partialContainerCode)
         {
             throw new NotImplementedException();
         }

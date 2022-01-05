@@ -8,6 +8,6 @@ namespace ContainerCheckDigitCalculator
 {
     public interface IContainerCheckDigitCalculator
     {
-        int CalculateChackDigit(string partialContainerCode);
+        int CalculateCheckDigit(string partialContainerCode);
     }
 }
