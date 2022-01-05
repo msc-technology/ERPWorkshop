@@ -100,5 +100,34 @@ namespace CheckDigitCalculatorTests
         {
             Assert.IsTrue(9 == calc.CalculateCheckDigit("MSCU620153"));
         }
+        [TestMethod]
+        public void massive_test()
+        {
+            string[] probeset =
+            {
+                "MSDU4366030",
+                "MSDU4366019",
+                "GMCU3060960",
+                "EXFU5611620",
+                "EURU1540024",
+                "EIAU2514095",
+                "ANNU1726552",
+                "ANNU8939288",
+                "SEGU8130191",
+                "RMCU0950404",
+                "MSMU1356266",
+                "MSMU1356250",
+                "IHOU3051462",
+                "SVLU2011036",
+                "SVLU2011020",
+                "OTPU6431393",
+                "OTPU6431310",
+                "OTPU6431290",
+            };
+            foreach (var code in probeset)
+            {
+                Assert.IsTrue(int.Parse(code.Substring(10, 1)) == calc.CalculateCheckDigit(code.Substring(0, 10)));
+            }
+        }
     }
 }
