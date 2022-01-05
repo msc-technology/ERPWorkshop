@@ -11,14 +11,20 @@ namespace RandomProducerTest
         [TestMethod]
         public void random_generator_follow_rules()
         {
+            const int howMany = 1000;
             var generator = new RandomContainerProducer();
-            var mock = new MockPersister();
-            generator.GenerateAndSave(1000, mock);
+            var mock = new MockPersister(howMany);
+            generator.GenerateAndSave(howMany, mock);
             mock.VerifyExpectations();
         }
 
         public class MockPersister : IContainerPersisterService
         {
+            public MockPersister(int expectedPersistCount)
+            {
+                this.expectedPersistCount = expectedPersistCount;
+            }
+            int expectedPersistCount;
             int beginCalled = 0;
             int endCalled = 0;
             bool wrongOrder;
@@ -39,6 +45,7 @@ namespace RandomProducerTest
             {
                 if (!Regex.IsMatch(containerCode, @"^MS[A-Z]U\d{7}$"))
                     followRules = false;
+                expectedPersistCount--;
                 var span = DateTime.Today - hireDate.Date;
                 if (span.TotalDays > 120 || span.TotalDays < 0)
                     followRules = false;
@@ -59,8 +66,14 @@ namespace RandomProducerTest
                     throw new Exception("Wrong begin/end order");
                 if (beginCalled > 1 || endCalled > 1)
                     throw new Exception("begin or end called too many times");
+                if (beginCalled == 0 || endCalled==0)
+                    throw new Exception("begin or end not called");
                 if (!followRules)
                     throw new Exception("random generation rules not respected");
+                if (expectedPersistCount > 0)
+                    throw new Exception("persist not called enough");
+                if( expectedPersistCount < 0)
+                    throw new Exception("persist not called too many times");
 
             }
         }

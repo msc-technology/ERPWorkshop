@@ -10,7 +10,7 @@ namespace CreateContainersBatch
     {
         public void GenerateAndSave(int count, IContainerPersisterService persister)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }
