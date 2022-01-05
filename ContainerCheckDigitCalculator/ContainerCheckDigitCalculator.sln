@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContainerCheckDigitCalculat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckDigitCalculatorTests", "..\CheckDigitCalculatorTests\CheckDigitCalculatorTests.csproj", "{B2CE4D16-7F56-450A-9885-21FF3FBB1E3D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateContainersBatch", "..\CreateContainersBatch\CreateContainersBatch.csproj", "{195C9E7F-3D18-4C1F-857A-ED23A9DEDBA1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B2CE4D16-7F56-450A-9885-21FF3FBB1E3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2CE4D16-7F56-450A-9885-21FF3FBB1E3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2CE4D16-7F56-450A-9885-21FF3FBB1E3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{195C9E7F-3D18-4C1F-857A-ED23A9DEDBA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{195C9E7F-3D18-4C1F-857A-ED23A9DEDBA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{195C9E7F-3D18-4C1F-857A-ED23A9DEDBA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{195C9E7F-3D18-4C1F-857A-ED23A9DEDBA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
