@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using CreateContainersBatch;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -36,7 +37,20 @@ namespace RandomProducerTest
 
             public void Persist(string containerCode, string containerType, DateTime hireDate)
             {
-                throw new NotImplementedException();
+                if (!Regex.IsMatch(containerCode, @"^MS[A-Z]U\d{7}$"))
+                    followRules = false;
+                var span = DateTime.Today - hireDate.Date;
+                if (span.TotalDays > 120 || span.TotalDays < 0)
+                    followRules = false;
+                switch (containerType)
+                {
+                    case "20 DRY VAN":
+                    case "40 DRY VAN":
+                    case "20 HIGH CUBE":
+                    case "40 HIGH CUBE":
+                    default:followRules = false;
+                        break;
+                }
             }
 
             internal void VerifyExpectations()
@@ -45,6 +59,8 @@ namespace RandomProducerTest
                     throw new Exception("Wrong begin/end order");
                 if (beginCalled > 1 || endCalled > 1)
                     throw new Exception("begin or end called too many times");
+                if (!followRules)
+                    throw new Exception("random generation rules not respected");
 
             }
         }
