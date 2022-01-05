@@ -17,6 +17,7 @@ CREATE TABLE dbo.Container
 (
 Container INT PRIMARY KEY IDENTITY,
 ContainerTypeId INT REFERENCES dbo.ContainerType(ContainerTypeId),
+ContainerCode VARCHAR(11),
 HireDate DATETIME
 )
 
