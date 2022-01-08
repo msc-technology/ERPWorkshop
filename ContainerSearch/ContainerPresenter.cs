@@ -11,11 +11,13 @@ namespace ContainerSearch
     public class ContainerPresenter : IContainerPresenter
     {
         private readonly IContainerView view;
+        private readonly IContainerService containerService;
         private readonly int pageSize = 50;
         private Dictionary<int, ContainerModel[]> pages = new Dictionary<int, ContainerModel[]>();
-        public ContainerPresenter(IContainerView view)
+        public ContainerPresenter(IContainerView view,IContainerService containerService)
         {
             this.view = view;
+            this.containerService = containerService;
         }
         public ContainerModel GetItemAt(int index)
         {
@@ -29,12 +31,13 @@ namespace ContainerSearch
 
         private ContainerModel[] FetchPage(int index)
         {
-            throw new NotImplementedException();
+            var offset = index / pageSize * pageSize;
+            return containerService.FetchPage(offset, pageSize, toSearch);
         }
 
         public void Initialize()
         {
-            throw new NotImplementedException();
+            view.SetItemsCount(containerService.GetCount(toSearch));
         }
         string toSearch;
         public void Search(string searchFor)
@@ -47,11 +50,6 @@ namespace ContainerSearch
         private void ClearAllPages()
         {
             pages.Clear();
-        }
-
-        SqlConnection OpenConnection()
-        {
-            throw new NotImplementedException();
         }
     }
 }

@@ -48,7 +48,9 @@
   <ItemGroup>
     <Compile Include="ContainerModel.cs" />
     <Compile Include="ContainerPresenter.cs" />
+    <Compile Include="ContainerService.cs" />
     <Compile Include="IContainerPresenter.cs" />
+    <Compile Include="IContainerService.cs" />
     <Compile Include="IContainerView.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
