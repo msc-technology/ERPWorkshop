@@ -1,8 +1,1 @@
-CREATE TABLE ContainerMart
-(
-id INT PRIMARY KEY IDENTITY,
-TransactionID UNIQUEIDENTIFIER NOT NULL,
-ContainerCode VARCHAR(11),
-ContainerType VARCHAR(100),
-HireDate DATETIME
-)
+---create a table here to match field in SQL Bulk Persister
