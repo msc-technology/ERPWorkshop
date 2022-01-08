@@ -17,7 +17,7 @@ namespace ContainerSearch
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             MainForm mainform = new MainForm();
-            mainform.Presenter = new ContainerPresenter(mainform);
+            mainform.Presenter = new ContainerPresenter(mainform,new ContainerService());
             Application.Run(mainform);
         }
     }
