@@ -11,7 +11,7 @@ namespace CreateContainersBatch
         static void Main(string[] args)
         {
             var generator = new RandomContainerProducer();
-            generator.GenerateAndSave(1000, new SqlNaivePersister());
+            generator.GenerateAndSave(1000, new SqlBulkPersister());
         }
     }
 }

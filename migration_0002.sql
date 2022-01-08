@@ -1,0 +1,8 @@
+CREATE TABLE ContainerMart
+(
+id INT PRIMARY KEY IDENTITY,
+TransactionID UNIQUEIDENTIFIER NOT NULL,
+ContainerCode VARCHAR(11),
+ContainerType VARCHAR(100),
+HireDate DATETIME
+)
